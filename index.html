@@ -475,32 +475,33 @@
     <div class="container">
       <section class="section">
         <p class="section-label">Background</p>
-        <h2>Proteting yourself against crime in San Fransisco</h2>
+        <h2>Protecting yourself against crime in San Fransisco</h2>
 
         <p>
           The city San Francisco is celebrated for its vibrant culture, iconic skyline, and restless energy, the passage from day to night brings a subtle but meaningful shift. 
-          As the sun dips behind the Pacific and neighborhoods transition from bustling daytime activity to the glow of nightlife, patterns of movement, behavior, 
-          and interaction begin to change. Streets that once carried commuters and tourists take on new roles—hosting late-night diners, 
-          bar crowds, service workers, and those navigating the city after dark.
+          As the sun dips behind the Pacific and neighborhoods transition from bustling daytime activity to the glow of nightlife patterns of movement, behavior, 
+          and interactions begin to change. Streets that once carried commuters and tourists take on new roles—hosting late-night diners, 
+          bar crowds, service workers, and those navigating the city after dark. With this shift in activity, there is also a shift in the risk that comes with moving around the city.
+          And although crimerates are falling in the area, it is still necessary to be aware of your surroundings.
         </p>
 
         <p>
-          This project explores over two decades of crime data in San Francisco, spanning from 2003 to 2025, with a specific focus on how incidents are distributed across time—particularly 
-          during late-night hours. But this data does contain information about what kind of incident took place, and when and where it took place. Although crime rates are generally falling, 
-          it is still necessary to be aware of your surroundings.
-          
-          Rather than assuming that darkness inherently breeds disorder, the analysis seeks to uncover whether crime truly intensifies at night, or if the reality is shaped by more complex 
+          This project explores over two decades of crime data in San Francisco, spanning from 2003 to 2025, with a specific focus on how incidents are distributed across time. 
+          The data contains information about what kind of incident took place, and when and where it happened. It covers many different types of crimes, but in this project,
+          the focus is on Assault, Robbery, and Motor Vehicle Theft.
+
+          Rather than assuming that darkness inherently breeds disorder, the analysis seeks to uncover whether these crimes truly intensifies at night, or if the reality is shaped by more complex 
           social, economic, and environmental factors.
-          By examining temporal trends alongside neighborhood-level variation, this investigation aims to identify recurring patterns: Are certain types of crime more likely to occur after midnight? Do specific districts experience sharper increases during late hours? And how have these dynamics evolved over time?
-          At its core, this study asks a simple but compelling question:
+          By examining temporal trends alongside neighborhood-level variation, this investigation aims to identify recurring patterns.
+          This site aims to inform the visitors:
         </p>
 
         <div class="pull-quote">
-          <p>"Does crime increase during nightlife hours?, and how does this affect perceived safety?"</p>
+          <p>"Does crime increase during nightlife hours? And where are you most exposed?"</p>
         </div>
 
         <p>
-          To understand nightlife sf crime, we will analyze the temporal distribution of incidents across different those 4 categories assault, motor vehicle theft, larceny theft og robbery and map these trends onto the city's diverse neighborhoods.
+          To crime rates in San Francisco, we will analyze the temporal distribution of incidents across the aforementioned crimes, and look at the different districts in San Francisco, to guide the reader on how best to protect themselves.
         </p>
       </section>
     </div>
@@ -512,11 +513,8 @@
         <h2>San Francisco's Police Districts</h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. The city is
-          divided into ten patrol districts, each with its own character, density, and
-          night-time rhythm.
+          For each incident recorded in the dataset, the police district has also been noted. These districts correspond to different known districts in San Francisco. 
+          Each of them have unique characteristics, and a variety of inhabitants. In the boxes below are breif descriptions of each of them. 
         </p>
 
         <div class="district-list">
@@ -704,9 +702,9 @@
     </figure>
 
     <p>
-      As seen in Figure 1, crime levels differ significantly between weekdays and weekends. Larceny theft dominates overall, ranging from 27,748 incidents on Monday to a peak of 41,477 on Saturday. 
+      The figure shows that crime levels differ between weekdays and weekends. Larceny theft dominates overall, ranging from 27,748 incidents on Monday to a peak of 41,477 on Saturday. 
       Assaults increase from 9,953 on Monday to 15,889 on Saturday. Motor vehicle thefts rise from 8,597 on Monday to 10,963 on Saturday, while robberies increase from 4,371 on Monday to 5,708 on Saturday. 
-      These trends show that weekends experience notably higher crime, likely reflecting increased social activity, nightlife, and movement across the city.
+      These trends show that weekends experience higher crime, likely reflecting increased social activity, nightlife, and movement across the city.
     </p>
   </section>
 </div>
@@ -757,45 +755,32 @@ new Chart(document.getElementById("crimeChart"), {
 });
 </script>
 
-    <!-- ── 3. FIGURE 2: FOLIUM HEATMAP ────────────────────── -->
+    <!-- ── 3. FIGURE 2: MAP ────────────────────── -->
     <div class="container">
       <section class="section">
         <p class="section-label">Figure 2 · Interactive Map</p>
-        <h2>Where Night Crime Clusters: A Spatial View</h2>
+        <h2>Where Crime Clusters: A Spatial View</h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Aenean ultricies mi vitae est. Mauris
-          placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-          Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
+          A map of San Francisco is shown in Figure 2 below. Here each district is marked with a border, and colored by how large a percentage of the total crimes are commited in the district. 
+          Each marker contains information about the crime, i.e. the count for each focus crime, at what hour they each have the most occurences, and the percentage the area has of the total of focus crimes in SF.
         </p>
 
         <figure class="figure-wrap">
           <iframe 
-            src="visualization/popup_map.html" 
+            src="visualization/popup_map_color.html" 
             style="width: 100%; height: 400px; border: 1.5px dashed #7096c8; border-radius: 4px;"
             frameborder="0">
           </iframe>
           <figcaption>
-            <strong>Fig. 2 —</strong> Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Kernel density heatmap of incidents reported between 22:00 and 04:00,
-            overlaid on the San Francisco street network. Brighter areas indicate higher
-            incident density.
+            <strong>Fig. 2 —</strong> A map of San Francisco. The percentage of total incidents is marked for each district, lighter blue indicating less crimes and darker blue indicating more crime. Each district has a marker with information about the crime counts, and the most common time the crimes occur. Red markers mean the most common crime is assault, blue is motor vehicle theft, and orange is robbery. 
           </figcaption>
         </figure>
 
         <p>
-          Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-          sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.
-          Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue,
-          eu vulputate magna eros eu erat.
-        </p>
-
-        <p>
-          Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-          luctus, metus. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec
-          consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non,
-          commodo a, sodales sit amet, nisi.
+          From the map, you can see that in the districts on the east side of SF the most common crime is assault, whereas on the west side, the most common crime is motor vehicle theft. 
+          In most districts assault is more likely to happen in the late afternoon, motor vehicle theft moslty happens around 6 pm, and robbery happens most often at around 8-9 pm. 
+          <!-- Kan man evt. sige noget om, om områder med højest motor vehicle theft har højere inkomst/mindre urbant og derfor højere behov for biler, så der er lækrere biler at stjæle? De er ikke lige så tæt befolket, så der er også mindre assault - man støder ikke lige så let ind i folk -->
         </p>
       </section>
     </div>
