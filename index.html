@@ -352,6 +352,97 @@
 
     footer span { color: var(--accent); }
 
+    /* ─── DISTRICT ACCORDION ─────────────────────────────────── */
+    .district-list {
+      margin: 2rem 0 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .district-item {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--card-bg);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .district-item:has(.district-body:not([hidden])) {
+      border-color: var(--accent-mid);
+    }
+
+    .district-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: left;
+      transition: background 0.18s;
+    }
+
+    .district-toggle:hover { background: var(--card-bg-hover); }
+
+    .district-toggle-left {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .district-index {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-family: 'Source Serif 4', serif;
+      font-weight: 400;
+      min-width: 1.6rem;
+      text-transform: uppercase;
+    }
+
+    .district-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.01em;
+    }
+
+    .district-chevron {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--accent-mid);
+      transition: transform 0.25s ease;
+    }
+
+    .district-item:has(.district-body:not([hidden])) .district-chevron {
+      transform: rotate(180deg);
+    }
+
+    .district-body {
+      padding: 0 1.1rem 1rem 3.05rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      border-top: 1px solid var(--border);
+      animation: accordionOpen 0.2s ease;
+    }
+
+    .district-body[hidden] { display: none; }
+
+    .district-body p { margin: 0.7rem 0 0; color: var(--text-secondary); }
+    .district-body p:first-child { margin-top: 0.8rem; }
+
+    @keyframes accordionOpen {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
     /* ─── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 600px) {
       header { padding: 3.5rem 1.2rem 3rem; }
@@ -414,7 +505,177 @@
       </section>
     </div>
 
-    <!-- ── 2. FIGURE 1: STATIC BAR CHART ──────────────────── -->
+    <!-- ── 2. DISTRICTS ───────────────────────────────────────── -->
+    <div class="container">
+      <section class="section">
+        <p class="section-label">The Neighbourhoods</p>
+        <h2>San Francisco's Police Districts</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. The city is
+          divided into ten patrol districts, each with its own character, density, and
+          night-time rhythm.
+        </p>
+
+        <div class="district-list">
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">01</span>
+                <span class="district-name">Northern</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">02</span>
+                <span class="district-name">Taraval</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">03</span>
+                <span class="district-name">Mission</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">04</span>
+                <span class="district-name">Ingleside</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">05</span>
+                <span class="district-name">Richmond</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">06</span>
+                <span class="district-name">Southern</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">07</span>
+                <span class="district-name">Park</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">08</span>
+                <span class="district-name">Bayview</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">09</span>
+                <span class="district-name">Central</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+          <div class="district-item">
+            <button class="district-toggle" onclick="toggleDistrict(this)" aria-expanded="false">
+              <span class="district-toggle-left">
+                <span class="district-index">10</span>
+                <span class="district-name">Tenderloin</span>
+              </span>
+              <svg class="district-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="5,8 10,13 15,8"/>
+              </svg>
+            </button>
+            <div class="district-body" hidden>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ── 3. FIGURE 1: STATIC BAR CHART ──────────────────── -->
     <div class="container">
       <section class="section">
         <p class="section-label">Figure 1 · Static Plot</p>
@@ -586,6 +847,15 @@
     <p>San Francisco Crime Data · 2003–2025 &nbsp;|&nbsp; SFPD Incident Report Database<br>
     Group 30 &nbsp;·&nbsp; Social Data Analysis &amp; Visualization &nbsp;·&nbsp; <span>2026</span></p>
   </footer>
+
+  <script>
+    function toggleDistrict(btn) {
+      const body = btn.nextElementSibling;
+      const isOpen = !body.hidden;
+      body.hidden = isOpen;
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    }
+  </script>
 
 </body>
 </html>
