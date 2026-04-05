@@ -475,32 +475,32 @@
     <div class="container">
       <section class="section">
         <p class="section-label">Background</p>
-        <h2>Setting the Scene</h2>
+        <h2>Proteting yourself against crime in San Fransisco</h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur, excepteur sint occaecat cupidatat non proident.
+          The city San Francisco is celebrated for its vibrant culture, iconic skyline, and restless energy, the passage from day to night brings a subtle but meaningful shift. 
+          As the sun dips behind the Pacific and neighborhoods transition from bustling daytime activity to the glow of nightlife, patterns of movement, behavior, 
+          and interaction begin to change. Streets that once carried commuters and tourists take on new roles—hosting late-night diners, 
+          bar crowds, service workers, and those navigating the city after dark.
         </p>
 
         <p>
-          Sunt in culpa qui officia deserunt mollit anim id est laborum. Pellentesque habitant
-          morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
-          tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
-          sit amet quam egestas semper. Aenean ultricies mi vitae est.
+          This project explores over two decades of crime data in San Francisco, spanning from 2003 to 2025, with a specific focus on how incidents are distributed across time—particularly 
+          during late-night hours. But this data does contain information about what kind of incident took place, and when and where it took place. Although crime rates are generally falling, 
+          it is still necessary to be aware of your surroundings.
+          
+          Rather than assuming that darkness inherently breeds disorder, the analysis seeks to uncover whether crime truly intensifies at night, or if the reality is shaped by more complex 
+          social, economic, and environmental factors.
+          By examining temporal trends alongside neighborhood-level variation, this investigation aims to identify recurring patterns: Are certain types of crime more likely to occur after midnight? Do specific districts experience sharper increases during late hours? And how have these dynamics evolved over time?
+          At its core, this study asks a simple but compelling question:
         </p>
 
         <div class="pull-quote">
-          <p>"Does darkness truly invite disorder, or does the data tell a more nuanced story?"</p>
+          <p>"Does crime increase during nightlife hours?, and how does this affect perceived safety?"</p>
         </div>
 
         <p>
-          Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-          Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
-          Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-          sagittis tempus lacus enim ac dui.
+          To understand nightlife sf crime, we will analyze the temporal distribution of incidents across different those 4 categories assault, motor vehicle theft, larceny theft og robbery and map these trends onto the city's diverse neighborhoods.
         </p>
       </section>
     </div>
@@ -675,47 +675,87 @@
       </section>
     </div>
 
-    <!-- ── 3. FIGURE 1: STATIC BAR CHART ──────────────────── -->
-    <div class="container">
-      <section class="section">
-        <p class="section-label">Figure 1 · Static Plot</p>
-        <h2>Crime Incidents Across the Week</h2>
+   <!-- ── 3. FIGURE 1: BAR CHART ───────────────────────────── -->
+<div class="container">
+  <section class="section">
+    <p class="section-label">Figure 1 · Interactive Plot</p>
+    <h2>Crime Incidents Across the Week</h2>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-
-        <figure class="figure-wrap">
-          <div class="figure-placeholder">
-            <div class="fig-icon">
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
-                <rect x="2" y="10" width="3" height="8"/>
-                <rect x="7" y="6"  width="3" height="12"/>
-                <rect x="12" y="3" width="3" height="15"/>
-                <line x1="1" y1="18" x2="19" y2="18"/>
-              </svg>
-            </div>
-            <span class="fig-type">Static · Matplotlib</span>
-            <span class="fig-name">Incident count by weekday</span>
-          </div>
-          <figcaption>
-            <strong>Fig. 1 —</strong> Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Total incident counts aggregated by day of week, 2003–2025. Data sourced
-            from the SFPD incident report database.
-          </figcaption>
-        </figure>
-
-        <p>
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum. Pellentesque habitant morbi tristique senectus et netus
-          et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-          ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
-        </p>
-      </section>
+    <div class="pull-quote">
+      <p>"Do certain days carry more risk, or are patterns of crime more consistent than we expect?"</p>
     </div>
+
+    <p>
+      From weekday commutes to weekend nightlife, the rhythm of the week shapes how people move through the city. 
+      These shifts may also influence when and where crime occurs. By analyzing incidents across each day of the week, 
+      this section explores whether crime peaks during weekends, declines midweek, or follows more subtle and 
+      unexpected patterns, as illustrated in Figure 1.
+    </p>
+
+    <figure class="figure-wrap">
+      <!-- Chart goes here -->
+      <canvas id="crimeChart"></canvas>
+
+      <figcaption>
+        <strong>Fig. 1 —</strong> Total incident counts aggregated by day of week, 2003–2025.
+        The chart highlights variations across the week, with visible increases toward the weekend.
+        Data sourced from the SFPD incident report database.
+      </figcaption>
+    </figure>
+
+    <p>
+      As seen in Figure 1, crime levels differ significantly between weekdays and weekends. Larceny theft dominates overall, ranging from 27,748 incidents on Monday to a peak of 41,477 on Saturday. 
+      Assaults increase from 9,953 on Monday to 15,889 on Saturday. Motor vehicle thefts rise from 8,597 on Monday to 10,963 on Saturday, while robberies increase from 4,371 on Monday to 5,708 on Saturday. 
+      These trends show that weekends experience notably higher crime, likely reflecting increased social activity, nightlife, and movement across the city.
+    </p>
+  </section>
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart Script -->
+<script>
+const data = {
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+datasets: [
+{
+  label: "assault",
+  data: [9953, 9402, 9446, 9791, 12006, 15889, 15586]
+},
+{
+  label: "larceny theft",
+  data: [27748, 28277, 29355, 30766, 37505, 41477, 34149]
+},
+{
+  label: "motor vehicle theft",
+  data: [8597, 8625, 8779, 9063, 10314, 10963, 10053]
+},
+{
+  label: "robbery",
+  data: [4371, 4251, 4207, 4255, 4604, 5708, 5548]
+},
+]
+};
+
+new Chart(document.getElementById("crimeChart"), {
+  type: "bar",
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</script>
 
     <!-- ── 3. FIGURE 2: FOLIUM HEATMAP ────────────────────── -->
     <div class="container">
