@@ -450,6 +450,52 @@
       .card-grid { grid-template-columns: 1fr; }
       .figure-placeholder { min-height: 220px; padding: 2.5rem 1.2rem; }
     }
+
+    /* === Figure container === */
+.figure-wrap {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+/* Card-style container */
+.figure-inner {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 14px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  /* soft modern shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  /* subtle border */
+  border: 1px solid #eee;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover effect (very subtle, modern feel) */
+.figure-inner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Image styling */
+.chart-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Caption styling */
+.figure-wrap figcaption {
+  max-width: 750px;
+  margin: 1.2rem auto 0;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
   </style>
 </head>
 
@@ -672,88 +718,64 @@
         </div>
       </section>
     </div>
-
-   <!-- ── 3. FIGURE 1: BAR CHART ───────────────────────────── -->
+<!-- ── 3. FIGURE 1 ───────────────────────────── -->
 <div class="container">
   <section class="section">
-    <p class="section-label">Figure 1 · Interactive Plot</p>
-    <h2>Crime Incidents Across the Week</h2>
+    
+    <p class="section-label">Figure 1 · Trend Analysis</p>
+    <h2>Crime Trends Over Time</h2>
 
     <div class="pull-quote">
-      <p>"Do certain days carry more risk, or are patterns of crime more consistent than we expect?"</p>
+      <p>"How has crime evolved over time, and which patterns stand out across two decades of data?"</p>
     </div>
 
     <p>
-      From weekday commutes to weekend nightlife, the rhythm of the week shapes how people move through the city. 
-      These shifts may also influence when and where crime occurs. By analyzing incidents across each day of the week, 
-      this section explores whether crime peaks during weekends, declines midweek, or follows more subtle and 
-      unexpected patterns, as illustrated in Figure 1.
+      Understanding long-term developments in crime provides insight into broader social and urban dynamics. 
+      By examining incident counts over time, we can identify whether crime levels are increasing, decreasing, 
+      or shifting across categories. Figure 1 presents these trends from 2003 to 2025, highlighting how different 
+      types of crime have evolved.
     </p>
 
     <figure class="figure-wrap">
-      <!-- Chart goes here -->
-      <canvas id="crimeChart"></canvas>
+      
+      <div class="figure-inner">
+        <img src="figure1_crime_per_year_line.png" 
+             alt="Crime incidents per year" 
+             class="chart-image">
+      </div>
 
       <figcaption>
-        <strong>Fig. 1 —</strong> Total incident counts aggregated by day of week, 2003–2025.
-        The chart highlights variations across the week, with visible increases toward the weekend.
-        Data sourced from the SFPD incident report database.
+        <strong>Fig. 1 — Crime trends over time (2003–2025).</strong>
+        The figure shows the development of major crime categories across two decades. 
+        Larceny remains the most prevalent category, while other crime types display 
+        noticeable increases in recent years. Data source: SFPD incident reports.
       </figcaption>
+
     </figure>
 
     <p>
-      The figure shows that crime levels differ between weekdays and weekends. Larceny theft dominates overall, ranging from 27,748 incidents on Monday to a peak of 41,477 on Saturday. 
-      Assaults increase from 9,953 on Monday to 15,889 on Saturday. Motor vehicle thefts rise from 8,597 on Monday to 10,963 on Saturday, while robberies increase from 4,371 on Monday to 5,708 on Saturday. 
-      These trends show that weekends experience higher crime, likely reflecting increased social activity, nightlife, and movement across the city.
+      As illustrated in Figure 1, larceny theft clearly dominates across the entire period, 
+  consistently accounting for the largest share of reported incidents. While relatively 
+  stable in the early 2000s, larceny rises sharply after 2012 and peaks in the late 2010s, 
+  before dropping noticeably around 2020 and partially recovering thereafter. 
+
+  Assault follows a more gradual upward trend, increasing steadily over time with only 
+  minor fluctuations, suggesting a consistent rise rather than sudden shifts. Motor vehicle 
+  theft shows greater volatility: after declining in the mid-2000s, it begins to rise again 
+  in the 2010s, indicating a possible change in underlying conditions or enforcement patterns. 
+  Robbery remains comparatively stable throughout, with smaller increases that do not match 
+  the scale of other crime categories.
+
+  A clear disruption is visible around 2020, where multiple crime types decline simultaneously.
+  This likely reflects broader societal changes during that period, such as reduced mobility 
+  and altered daily routines such as corona virus. Overall, the data suggests that while long-term growth is evident 
+  in several categories, crime trends are not uniform and are influenced by both structural 
+  changes and short-term external factors.
+
     </p>
+
   </section>
 </div>
-
-<!-- Chart.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Chart Script -->
-<script>
-const data = {
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-datasets: [
-{
-  label: "assault",
-  data: [9953, 9402, 9446, 9791, 12006, 15889, 15586]
-},
-{
-  label: "larceny theft",
-  data: [27748, 28277, 29355, 30766, 37505, 41477, 34149]
-},
-{
-  label: "motor vehicle theft",
-  data: [8597, 8625, 8779, 9063, 10314, 10963, 10053]
-},
-{
-  label: "robbery",
-  data: [4371, 4251, 4207, 4255, 4604, 5708, 5548]
-},
-]
-};
-
-new Chart(document.getElementById("crimeChart"), {
-  type: "bar",
-  data: data,
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: false
-      }
-    },
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-</script>
 
     <!-- ── 3. FIGURE 2: MAP ────────────────────── -->
     <div class="container">
@@ -879,3 +901,4 @@ new Chart(document.getElementById("crimeChart"), {
 
 </body>
 </html>
+
