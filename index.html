@@ -799,7 +799,7 @@ a.cite:hover {
 <div class="container">
   <section class="section">
     
-    <p class="section-label">Figure 1 · Trend Analysis</p>
+    <p class="section-label">Trend Analysis</p>
     <h2>Crime Trends Over Time</h2>
 
     <div class="pull-quote">
@@ -825,7 +825,7 @@ a.cite:hover {
         <strong>Fig. 1 — Crime trends over time (2003–2025).</strong>
         The figure shows the development of major crime categories across two decades. 
         Larceny remains the most prevalent category, while other crime types display 
-        noticeable increases in recent years. Data source: SFPD incident reports<a href="#ref-data-old" class="cite">[1,</a><a href="#ref-data-new" class="cite">2]</a>.
+        noticeable increases in recent years. Data source: SFPD incident reports.<a href="#ref-data-old" class="cite">[1,</a><a href="#ref-data-new" class="cite">2]</a>
       </figcaption>
 
     </figure>
@@ -858,7 +858,7 @@ a.cite:hover {
     <!-- Section heading (normal width) -->
     <div class="container">
       <section class="section">
-        <p class="section-label">Figure 2 · Interactive Map</p>
+        <p class="section-label">Spatial Overview</p>
         <h2>Where Crime Clusters: A Spatial View</h2>
 
         <p>
@@ -883,7 +883,10 @@ a.cite:hover {
     <div class="container">
       <section class="section" style="padding-top: 1rem;">
         <figcaption>
-          <strong>Fig. 2 —</strong> A map of San Francisco. The percentage of total incidents is marked for each district for each crime type, lighter colors indicating less crimes and darker colors indicating more crime. Each district has a marker with information about the crime counts, and the most common time the crimes occur. 
+          <strong>Fig. 2 —</strong> A map of San Francisco. 
+          The percentage of total incidents is marked for each district for each crime type, lighter colors indicating less crimes and darker colors indicating more crime. 
+          Each district has a marker with information about the crime counts, and the most common time the crimes occur.
+          Data source: SFPD incident reports.<a href="#ref-data-old" class="cite">[1,</a><a href="#ref-data-new" class="cite">2]</a> 
         </figcaption>
 
         <p style="margin-top: 1rem;">
@@ -899,14 +902,12 @@ a.cite:hover {
     <div class="full-width-section">
       <section class="section">
         <div class="container">
-            <p class="section-label">Figure 3 · Animated Plot</p>
-            <h2>Districts Under the Clock: Hourly Crime Patterns</h2>
+            <p class="section-label">Patterns Throughout the Week</p>
+            <h2>Temporal Crime Patterns: Incidents Throughout the Week</h2>
 
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Pellentesque
-            habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            As established, crime trends go up and down over time, but the weekly patterns can give insights as to which times residents and tourists should be extra careful. 
+            Figure 3 illustrates how average incident counts correlate with each hour of the week; both on a crime type perspective, and for each of the ten SF districts.
             </p>
         </div>
     
@@ -921,7 +922,7 @@ a.cite:hover {
             <span class="fig-type">Animated · Plotly</span>
             <span class="fig-name">Incidents by police district across hours of day</span>
           </div> -->
-          <div class="iframe-scaler" data-fig-w="1600" data-fig-h="1220" data-max-w="0.8" data-min-w="1.0" data-min-px="600">
+          <div class="iframe-scaler" data-fig-w="1600" data-fig-h="1220" data-max-w="0.7" data-min-w="1.0" data-min-px="600">
             <iframe 
                 src="visualizations/weekly_crime_patterns_focus_and_districts_interactive.html"
                 frameborder="0">
@@ -930,10 +931,12 @@ a.cite:hover {
 
           <div class="container">
             <figcaption>
-                <strong>Fig. 3 —</strong> Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Animated bar chart showing incident counts per police district, stepping
-                through each hour of the day (00:00 – 23:00). Use the playback controls to
-                observe how the distribution shifts from daytime to late-night hours.
+                <strong>Fig. 3 —</strong> Interactive line plot to illustrate average incident counts for each hour of the week. 
+                The top pane (3a) shows average incident counts for each of the four focus crimes - assault, larceny/theft, motor vehicle theft and robbery - while the bottom pane (3b) shows average incident counts for each of the districts. 
+                Average values are calculated from all data across the years 2003-2025. The error bars show the minimum and maximum value for each hour. 
+                Hovering a specific data points highlights all mentioned values, as well as the standard deviation for the specific data point. 
+                Dashed vertical lines indicate day borders (midnight). 
+                Data source: SFPD incident reports.<a href="#ref-data-old" class="cite">[1,</a><a href="#ref-data-new" class="cite">2]</a>
             </figcaption>
             <!-- </figure> -->
 
@@ -941,10 +944,18 @@ a.cite:hover {
             <br>
 
             <p>
-            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-            Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
-            Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-            Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
+                As can be seen in Figure 3, there are quite clear patterns of sinusoidally increasing and decreasing incidents throughout the days of the week. 
+                Notably, looking at Figure 3a, robberies generally happen more, the later in the day it is, and peaks around 10 pm most days, except for weekends, where more incidents happen and peaks around 1-2 am. 
+                Throughout the week assaults tend to peak more around midday, again except for weekends, where they peak around midnight to 1 am. 
+                Robberies tend to be more secretive in nature, with the criminal trying to do it at less active hours, while assaults require other people to be present, 
+                and can generally happen more spontaneously during the day, when more people are around. 
+            </p>
+
+            <p>
+                Looking at Figure 3b, we see that different districts have different weekly patterns. 
+                For some districts, such as Central and Southern, crimes also tend to be more likely at the late hours of the day. 
+                Knowing that different neighbourhoods are characterised by different crime types is important, when deciding how to best stay safe. 
+                The most common crimes of focus for each of the districts, are highlighted in Figure 2.
             </p>
             
           </div>
