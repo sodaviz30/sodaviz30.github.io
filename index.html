@@ -868,7 +868,7 @@
             <span class="fig-type">Animated · Plotly</span>
             <span class="fig-name">Incidents by police district across hours of day</span>
           </div> -->
-          <div class="iframe-scaler" data-fig-w="1600" data-fig-h="1200" data-max-w="0.8">
+          <div class="iframe-scaler" data-fig-w="1600" data-fig-h="1200" data-max-w="0.8" data-min-w="1.0" data-min-px="600">
             <iframe 
                 src="visualizations/weekly_crime_patterns_focus_and_districts_interactive.html"
                 frameborder="0">
@@ -883,6 +883,9 @@
                 observe how the distribution shifts from daytime to late-night hours.
             </figcaption>
             <!-- </figure> -->
+
+            <br>
+            <br>
 
             <p>
             Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
@@ -947,17 +950,19 @@
 
     function scaleIframes() {
         document.querySelectorAll('.iframe-scaler').forEach(wrapper => {
-            const figW  = parseFloat(wrapper.dataset.figW);
-            const figH  = parseFloat(wrapper.dataset.figH);
-            const maxW  = parseFloat(wrapper.dataset.maxW  || 1.0);
-            const availW = wrapper.clientWidth * maxW;
-            const scale  = availW / figW;
-            const scaledH = figH * scale;
-            wrapper.style.height = scaledH + 'px';
+            const figW   = parseFloat(wrapper.dataset.figW);
+            const figH   = parseFloat(wrapper.dataset.figH);
+            const maxW   = parseFloat(wrapper.dataset.maxW  || 1.0);
+            const minW   = parseFloat(wrapper.dataset.minW  || 0.0);
+            const minPx  = parseFloat(wrapper.dataset.minPx || 0);
+            const availW = wrapper.clientWidth;
+            const targetW = Math.max(availW * maxW, Math.min(availW, minPx));
+            const scale   = targetW / figW;
+            wrapper.style.height = (figH * scale) + 'px';
             const iframe = wrapper.querySelector('iframe');
             iframe.style.width  = figW + 'px';
             iframe.style.height = figH + 'px';
-            const offset = (wrapper.clientWidth - figW * scale) / 2;
+            const offset = (availW - figW * scale) / 2;
             iframe.style.transform = `translateX(${offset}px) scale(${scale})`;
             iframe.style.transformOrigin = 'top left';
         });
