@@ -531,6 +531,48 @@
   border-right: none;
   border-radius: 0;
 }
+
+/* References and citing */
+.reference-list {
+  margin: 1.5rem 0 0;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.reference-list li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 0.4rem;
+}
+
+.reference-list a {
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.reference-list a:hover {
+  color: var(--accent-mid);
+}
+
+a.cite {
+  font-size: 0.7rem;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: 0.1em;
+  font-family: 'Source Serif 4', serif;
+}
+
+a.cite:hover {
+  color: var(--accent-mid);
+  text-decoration: underline;
+}
+
   </style>
 </head>
 
@@ -868,7 +910,7 @@
             <span class="fig-type">Animated · Plotly</span>
             <span class="fig-name">Incidents by police district across hours of day</span>
           </div> -->
-          <div class="iframe-scaler" data-fig-w="1600" data-fig-h="1200" data-max-w="0.8" data-min-w="1.0" data-min-px="600">
+          <div class="iframe-scaler" data-fig-w="1600" data-fig-h="1220" data-max-w="0.8" data-min-w="1.0" data-min-px="600">
             <iframe 
                 src="visualizations/weekly_crime_patterns_focus_and_districts_interactive.html"
                 frameborder="0">
@@ -929,8 +971,27 @@
           Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
           Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci.
         </p>
+
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        <a href="#ref-1" class="cite">[1]</a>, sed do eiusmod tempor
+        incididunt ut labore <a href="#ref-2" class="cite">[2]</a>.
+        </p>
       </section>
     </div>
+
+  <!-- ── REFERENCES ─────────────────────────────────────── -->
+  <div class="container">
+    <section class="section">
+    <p class="section-label">References</p>
+
+    <ol class="reference-list">
+    <li id="ref-1">Author, A. (2024). <em>Title of the work.</em> Publisher. <a href="#">https://doi.org/...</a></li>
+    <li id="ref-2">Author, B., & Author, C. (2023). Title of article. <em>Journal Name, 12</em>(3), 45–67.</li>
+    <li>San Francisco Police Department. (2025). <em>Incident Reports 2003–2025.</em> <a href="#">https://data.sfgov.org</a></li>
+    </ol>
+    </section>
+  </div>
 
   </main>
 
