@@ -43,6 +43,15 @@
                 left:0;
                 }
             </style>
+            <style>
+                .leaflet-control .legend {
+                    position: absolute !important;
+                    bottom: 10px !important;
+                    right: 10px !important;
+                    left: auto !important;
+                    top: auto !important;
+                }
+            </style>
 
             <script>
                 L_NO_TOUCH = false;
@@ -53,15 +62,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 </head>
 <body>
-<style>
-.leaflet-control .legend {
-    position: absolute !important;
-    bottom: 10px !important;
-    right: 10px !important;
-    left: auto !important;
-    top: auto !important;
-}
-</style>
+    
     
 <script>
 var crimeLayers = [choropleth_fb9d63b683ca29e0eaba3326fd30a2da, choropleth_5d09927b87560ed30852ad1a9e2d9adf, choropleth_0b7a8a742dd4454adc62f6c2e7cce1c4, choropleth_3d10b83261dc5113fc9137e3de38247c, choropleth_395ed901340a429dca2fa6861a36f896];
