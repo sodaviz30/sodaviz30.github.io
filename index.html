@@ -861,25 +861,28 @@ a.cite:hover {
         <h2>Where Crime Clusters: A Spatial View</h2>
 
         <p>
-          A map of San Francisco is shown in Figure 2 below. Here each district is marked with a border, and colored by how large a percentage of the total crimes are commited in the district. 
-          Each marker contains information about the crime, i.e. the count for each focus crime, at what hour they each have the most occurences, and the percentage the area has of the total of focus crimes in SF.
+          A map of San Francisco is shown in Figure 2 below. Here each district is marked with a border, and have a marker with 
+          information about how many times each incidents have taken place in the area, the most common hour for the crimes, 
+          and how big a percentage of the total amount of focus crimes took place in the area. Furthermore it is possible 
+          to switch between the focus crimes, to see how they're distributed across San Francisco.
         </p>
 
         <figure class="figure-wrap">
           <iframe 
-            src="visualizations/popup_map_color.html" 
+            src="visualizations/crime_percentage_by_district.html" 
             style="width: 100%; height: 400px; border: 1.5px dashed #7096c8; border-radius: 4px;"
             frameborder="0">
           </iframe>
           <figcaption>
-            <strong>Fig. 2 —</strong> A map of San Francisco. The percentage of total incidents is marked for each district, lighter blue indicating less crimes and darker blue indicating more crime. Each district has a marker with information about the crime counts, and the most common time the crimes occur. Red markers mean the most common crime is assault, blue is motor vehicle theft, and orange is robbery. 
+            <strong>Fig. 2 —</strong> A map of San Francisco. The percentage of total incidents is marked for each district for each crime type, lighter colors indicating less crimes and darker colors indicating more crime. Each district has a marker with information about the crime counts, and the most common time the crimes occur. 
           </figcaption>
         </figure>
 
         <p>
-          From the map, you can see that in the districts on the east side of SF the most common crime is assault, whereas on the west side, the most common crime is motor vehicle theft. 
-          In most districts assault is more likely to happen in the late afternoon, motor vehicle theft moslty happens around 6 pm, and robbery happens most often at around 8-9 pm. 
-          <!-- Kan man evt. sige noget om, om områder med højest motor vehicle theft har højere inkomst/mindre urbant og derfor højere behov for biler, så der er lækrere biler at stjæle? De er ikke lige så tæt befolket, så der er også mindre assault - man støder ikke lige så let ind i folk -->
+          From the map, you can see that in the most common crime is Larceny/Theft. The second most common crime on the east side 
+          of SF is assault, whereas on the west side, the second most common crime is motor vehicle theft. In most districts assault 
+          is more likely to happen in the late afternoon, larceny/theft and motor vehicle theft moslty happens around 6 pm, and robbery 
+          happens most often at around 8-9 pm. It is therefore good to be even more aware of your surroundings at these times.
         </p>
       </section>
     </div>
